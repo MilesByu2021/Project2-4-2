@@ -1,0 +1,52 @@
+﻿@page
+@model Schedules
+@{
+}
+
+<form method="post" asp-controller="Form" asp-action="Form">
+    <div class="container">
+        <div class="card">
+            <div class="card-body card-header-pills">
+                <label asp-for="StartDate">Select A Date:</label>
+                <input asp-for="StartDate" type="text" />
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body card-header-pills">
+                <label asp-for="StartTime">Select A Time:</label>
+                <select asp-for="StartTime">
+                    <option value="8 AM">8 AM</option>
+                    <option value="9 AM">9 AM</option>
+                    <option value="10 AM">10 AM</option>
+                    <option value="11 AM">11 AM</option>
+                    <option value="12 AM">12 AM</option>
+                    <option value="1 PM">1 PM</option>
+                    <option value="2 PM">2 PM</option>
+                    <option value="3 PM">3 PM</option>
+                    <option value="4 PM">4 PM</option>
+                    <option value="5 PM">5 PM</option>
+                    <option value="6 PM">6 PM</option>
+                    <option value="7 PM">7 PM</option>
+                    <option value="8 PM">8 PM</option>
+                </select>
+            </div>
+        </div>
+        <input class="btn btn-primary" type="submit"/>
+        <!--<div class="text-white">
+            <a class="btn btn-primary btn-block" asp-controller="Form" asp-action="Form">8 AM - 9 AM</a>-->
+            @*<a class="btn btn-primary btn-block" asp-controller="Form" asp-action="Form">9 AM - 10 AM</a>
+                <a class="btn btn-primary btn-block" asp-controller="Form" asp-action="Form">10 AM - 11 AM</a>
+                <a class="btn btn-primary btn-block" asp-controller="Form" asp-action="Form">11 AM - 12 AM</a>
+                <a class="btn btn-primary btn-block" asp-controller="Form" asp-action="Form">1 PM - 2 PM</a>
+                <a class="btn btn-primary btn-block" asp-controller="Form" asp-action="Form">3 PM - 4 PM</a>
+                <a class="btn btn-primary btn-block" asp-controller="Form" asp-action="Form">5 PM - 6 PM</a>
+                <a class="btn btn-primary btn-block" asp-controller="Form" asp-action="Form">6 PM - 7 PM</a>
+                <a class="btn btn-primary btn-block" asp-controller="Form" asp-action="Form">7 PM - 8 PM</a>
+                <a class="btn btn-primary btn-block" asp-controller="Form" asp-action="Form">8 PM - 9 PM</a>*@
+        <!--</div>-->
+    </div>
+</form>
+
+
+
+

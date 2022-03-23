@@ -1,0 +1,19 @@
+﻿@{
+}
+@model Schedules
+<form method="post">
+    <input type="hidden" value="@Model.StartDate" />
+    <input type="hidden" value="@Model.StartTime" />
+    <label asp-for="GroupName">Group Name: </label>
+    <input asp-for="GroupName" type="text" />
+    <br />
+    <label asp-for="GroupSize">Group Size: </label>
+    <input asp-for="GroupSize" type="number" />
+    <br />
+    <label asp-for="GroupEmail">Group Email: </label>
+    <input asp-for="GroupEmail" type="text" />
+    <br />
+    <label asp-for="GroupPhone">Group Phone: </label>
+    <input asp-for="GroupPhone" type="text" />
+    <br />
+</form>
