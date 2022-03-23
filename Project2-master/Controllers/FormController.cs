@@ -9,6 +9,7 @@ namespace Project2.Controllers
 {
     public class FormController : Controller
     {
+        public Basket basket { get; set; }
         [HttpGet]
         public IActionResult Form()
         {
@@ -16,7 +17,7 @@ namespace Project2.Controllers
         }
         [HttpPost]
         public IActionResult Form(Schedules s)
-        {
+        {   
             return View(s);
         }
 

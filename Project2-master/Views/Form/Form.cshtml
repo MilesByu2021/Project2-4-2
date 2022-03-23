@@ -2,8 +2,8 @@
 }
 @model Schedules
 <form method="post">
-    <input type="hidden" value="@Model.StartDate" />
-    <input type="hidden" value="@Model.StartTime" />
+    <input asp-for="StartDate" type="hidden" value="@Model.StartDate" />
+    <input asp-for="StartTime" type="hidden" value="@Model.StartTime" />
     <label asp-for="GroupName">Group Name: </label>
     <input asp-for="GroupName" type="text" />
     <br />
@@ -16,4 +16,5 @@
     <label asp-for="GroupPhone">Group Phone: </label>
     <input asp-for="GroupPhone" type="text" />
     <br />
+    <input type="submit"/>
 </form>
