@@ -68,10 +68,14 @@ namespace Project2.Controllers
 
             return RedirectToAction("ScheduleList");
         }
-
-        public IActionResult Delete()
+        
+        public IActionResult Delete(int scheduleid)
         {
-            return View();
+            var application = scheduleContext.Schedule.Single(x => x.ScheduleId == scheduleid);
+            scheduleContext.Schedule.Remove(application);
+            scheduleContext.SaveChanges();
+
+            return RedirectToAction("ScheduleList");
         }
 
 
