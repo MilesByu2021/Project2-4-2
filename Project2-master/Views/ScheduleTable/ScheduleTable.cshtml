@@ -32,9 +32,9 @@
 
                 <td class="text-left">@i.GroupPhone</td>
 
-                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@i.ScheduleId">Edit</a></td>
+                <td><a asp-controller="Submit" asp-action="Edit" asp-route-scheduleid="@i.ScheduleId">Edit</a></td>
 
-                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@i.ScheduleId">Delete</a></td>
+                <td><a asp-controller="Submit" asp-action="Delete" asp-route-scheduleid="@i.ScheduleId">Delete</a></td>
             </tr>
         }
 

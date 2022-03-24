@@ -51,5 +51,23 @@ namespace Project2.Controllers
             return View("~/Views/ScheduleTable/ScheduleTable.cshtml", applications);
         }
 
+        public IActionResult Edit(int scheduleid)
+        {
+
+
+            var applications = scheduleContext.Schedule.ToList();
+
+            var application = scheduleContext.Schedule.Single(x => x.ScheduleId == scheduleid);
+
+
+            return View("~/Views/ScheduleTable/ScheduleTable.cshtml", application);
+        }
+
+        public IActionResult Delete()
+        {
+            return View();
+        }
+
+
     }
 }
