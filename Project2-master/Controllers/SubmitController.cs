@@ -24,6 +24,7 @@ namespace Project2.Controllers
         {
             return View("Index");
         }
+
         [HttpPost]
         public IActionResult Submit(Schedules s)
         {
@@ -35,5 +36,6 @@ namespace Project2.Controllers
 
             return View("~/Views/ScheduleTable/ScheduleTable.cshtml", basket);
         }
+
     }
 }

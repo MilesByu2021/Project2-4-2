@@ -1,5 +1,5 @@
-﻿@*@model Project2.Models.Basket*@
-@model List<Basket>
+﻿@model Project2.Models.Basket
+@*@model List<Basket>*@
 
 @{
 }
@@ -18,16 +18,24 @@
     </thead>
 
     <tbody>
-        @foreach (var i in Model.Basket.Items)
+        @foreach (var i in Model.Items)
         {
             <tr>
                 <td class="text-left">@i.Schedule.StartDate</td>
+
                 <td class="text-left">@i.Schedule.StartTime</td>
+
                 <td class="text-left">@i.Schedule.GroupName</td>
+
                 <td class="text-left">@i.Schedule.GroupSize</td>
+
                 <td class="text-left">@i.Schedule.GroupEmail</td>
+
                 <td class="text-left">@i.Schedule.GroupPhone</td>
 
+                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@i.Schedule.ScheduleId">Edit</a></td>
+
+                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@i.Schedule.ScheduleId">Delete</a></td>
             </tr>
         }
 
