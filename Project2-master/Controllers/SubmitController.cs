@@ -9,15 +9,20 @@ namespace Project2.Controllers
 {
     public class SubmitController : Controller
     {
-        private IFormRepository repo { get; set; }
+        private ScheduleApplicationContext scheduleContext { get; set; }
+        public SubmitController(ScheduleApplicationContext some)
+        {
+            scheduleContext = some;
+        }
+        //private IFormRepository repo { get; set; }
 
         private Basket basket { get; set; }
 
-        public SubmitController(IFormRepository temp, Basket b)
-        {
-            repo = temp;
-            basket = b;
-        }
+        //public SubmitController(IFormRepository temp, Basket b)
+        //{
+        //    repo = temp;
+        //    basket = b;
+        //}
 
         [HttpGet]
         public IActionResult Submit()
@@ -28,13 +33,22 @@ namespace Project2.Controllers
         [HttpPost]
         public IActionResult Submit(Schedules s)
         {
-            basket = new Basket();
+            scheduleContext.Add(s);
+            scheduleContext.SaveChanges();
+            //basket = new Basket();
 
-            basket.AddItem(s);
+            //basket.AddItem(s);
 
-            repo.SaveSchedule(s);
+            //repo.SaveSchedule(s);
 
-            return View("~/Views/ScheduleTable/ScheduleTable.cshtml", basket);
+            return RedirectToAction("ScheduleList");
+        }
+
+        [HttpGet]
+        public IActionResult ScheduleList ()
+        {
+            var applications = scheduleContext.Schedule.ToList();
+            return View("~/Views/ScheduleTable/ScheduleTable.cshtml", applications);
         }
 
     }

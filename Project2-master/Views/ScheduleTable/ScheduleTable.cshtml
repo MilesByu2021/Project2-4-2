@@ -1,8 +1,7 @@
-﻿@model Project2.Models.Basket
-@*@model List<Basket>*@
-
-@{
+﻿@{
 }
+
+@model List<Schedules>
 <h2>Your Appointments</h2>
 
 <table class="table table-bordered table-striped">
@@ -18,24 +17,24 @@
     </thead>
 
     <tbody>
-        @foreach (var i in Model.Items)
+        @foreach (var i in Model)
         {
             <tr>
-                <td class="text-left">@i.Schedule.StartDate</td>
+                <td class="text-left">@i.StartDate</td>
 
-                <td class="text-left">@i.Schedule.StartTime</td>
+                <td class="text-left">@i.StartTime</td>
 
-                <td class="text-left">@i.Schedule.GroupName</td>
+                <td class="text-left">@i.GroupName</td>
 
-                <td class="text-left">@i.Schedule.GroupSize</td>
+                <td class="text-left">@i.GroupSize</td>
 
-                <td class="text-left">@i.Schedule.GroupEmail</td>
+                <td class="text-left">@i.GroupEmail</td>
 
-                <td class="text-left">@i.Schedule.GroupPhone</td>
+                <td class="text-left">@i.GroupPhone</td>
 
-                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@i.Schedule.ScheduleId">Edit</a></td>
+                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@i.ScheduleId">Edit</a></td>
 
-                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@i.Schedule.ScheduleId">Delete</a></td>
+                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@i.ScheduleId">Delete</a></td>
             </tr>
         }
 

@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Project2-master",
+    "\\Project2-master\\Controllers",
+    "\\Project2-master\\Models",
     "\\Project2-master\\Pages"
   ],
-  "SelectedNode": "\\Project2-master\\Project2.sln",
+  "SelectedNode": "\\Project2-master\\Models\\Basket.cs",
   "PreviewInSolutionExplorer": false
 }

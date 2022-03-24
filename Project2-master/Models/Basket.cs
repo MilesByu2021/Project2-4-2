@@ -29,8 +29,8 @@ namespace Project2.Models
     public class BasketLineItem
     {
         [Key]
-        public int LineID { get; set; }
-
+        [Required]
+        public int BasketLineItemId { get; set; }
         public Schedules Schedule { get; set; }
     }
 }
