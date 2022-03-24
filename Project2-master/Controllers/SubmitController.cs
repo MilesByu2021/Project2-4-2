@@ -53,14 +53,12 @@ namespace Project2.Controllers
 
         public IActionResult Edit(int scheduleid)
         {
-
-
             var applications = scheduleContext.Schedule.ToList();
 
-            var application = scheduleContext.Schedule.Single(x => x.ScheduleId == scheduleid);
+            var application = applications.Single(x => x.ScheduleId == scheduleid);
 
 
-            return View("~/Views/ScheduleTable/ScheduleTable.cshtml", application);
+            return View("~/Views/Form/Form.cshtml", application);
         }
 
         public IActionResult Delete()
