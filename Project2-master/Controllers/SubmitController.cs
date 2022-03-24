@@ -50,7 +50,7 @@ namespace Project2.Controllers
             var applications = scheduleContext.Schedule.ToList();
             return View("~/Views/ScheduleTable/ScheduleTable.cshtml", applications);
         }
-
+        [HttpGet]
         public IActionResult Edit(int scheduleid)
         {
             var applications = scheduleContext.Schedule.ToList();
@@ -58,7 +58,15 @@ namespace Project2.Controllers
             var application = applications.Single(x => x.ScheduleId == scheduleid);
 
 
-            return View("~/Views/Form/Form.cshtml", application);
+            return View("~/Views/Form/EditForm.cshtml", application);
+        }
+        [HttpPost]
+        public IActionResult Edit (Schedules blah)
+        {
+            scheduleContext.Update(blah);
+            scheduleContext.SaveChanges();
+
+            return RedirectToAction("ScheduleList");
         }
 
         public IActionResult Delete()
