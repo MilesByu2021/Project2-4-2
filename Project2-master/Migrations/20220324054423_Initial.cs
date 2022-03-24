@@ -12,9 +12,9 @@ namespace Project2.Migrations
                 {
                     ScheduleId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    GroupName = table.Column<string>(nullable: true),
+                    GroupName = table.Column<string>(nullable: false),
                     GroupSize = table.Column<int>(nullable: false),
-                    GroupEmail = table.Column<string>(nullable: true),
+                    GroupEmail = table.Column<string>(nullable: false),
                     GroupPhone = table.Column<string>(nullable: true),
                     StartDate = table.Column<string>(nullable: true),
                     StartTime = table.Column<string>(nullable: true)

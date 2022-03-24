@@ -2,19 +2,20 @@
 }
 @model Schedules
 <form method="post" asp-controller="Submit" asp-action="Submit">
+    
     <input asp-for="StartDate" type="hidden" value="@Model.StartDate" />
     <input asp-for="StartTime" type="hidden" value="@Model.StartTime" />
     <label asp-for="GroupName">Group Name: </label>
-    <input asp-for="GroupName" type="text" />
+    <input asp-for="GroupName" type="text" required/>
     <br />
     <label asp-for="GroupSize">Group Size: </label>
-    <input asp-for="GroupSize" type="number" />
+    <input asp-for="GroupSize" type="number" min="0" max="15" required/>
     <br />
     <label asp-for="GroupEmail">Group Email: </label>
-    <input asp-for="GroupEmail" type="text" />
+    <input asp-for="GroupEmail" type="text" required/>
     <br />
     <label asp-for="GroupPhone">Group Phone: </label>
     <input asp-for="GroupPhone" type="text" />
     <br />
-    <input type="submit"/>
+    <input type="submit" />
 </form>

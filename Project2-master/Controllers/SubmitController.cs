@@ -41,7 +41,7 @@ namespace Project2.Controllers
 
             //repo.SaveSchedule(s);
 
-            return RedirectToAction("ScheduleList");
+            return View("~/Views/Home/Index.cshtml");
         }
 
         [HttpGet]

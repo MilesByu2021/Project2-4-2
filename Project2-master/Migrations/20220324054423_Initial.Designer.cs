@@ -8,7 +8,7 @@ using Project2.Models;
 namespace Project2.Migrations
 {
     [DbContext(typeof(ScheduleApplicationContext))]
-    [Migration("20220324021906_Initial")]
+    [Migration("20220324054423_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,9 +24,11 @@ namespace Project2.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("GroupEmail")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("GroupName")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("GroupPhone")

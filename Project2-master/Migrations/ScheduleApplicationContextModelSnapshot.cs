@@ -22,9 +22,11 @@ namespace Project2.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("GroupEmail")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("GroupName")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("GroupPhone")
