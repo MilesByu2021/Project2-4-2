@@ -6,6 +6,10 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\img\" />
+    <Folder Include="Views\ScheduleTable\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Views\ScheduleTable\" />
+  </ItemGroup>
 </Project>

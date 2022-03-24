@@ -9,8 +9,16 @@ namespace Project2.Controllers
 {
     public class SubmitController : Controller
     {
-        public Basket basket { get; set; }
-        
+        private IFormRepository repo { get; set; }
+
+        private Basket basket { get; set; }
+
+        public SubmitController(IFormRepository temp, Basket b)
+        {
+            repo = temp;
+            basket = b;
+        }
+
         [HttpGet]
         public IActionResult Submit()
         {
@@ -20,8 +28,12 @@ namespace Project2.Controllers
         public IActionResult Submit(Schedules s)
         {
             basket = new Basket();
+
             basket.AddItem(s);
-            return RedirectToPage("/SchedukeTable");
+
+            repo.SaveSchedule(s);
+
+            return View("~/Views/ScheduleTable/ScheduleTable.cshtml", basket);
         }
     }
 }

@@ -9,16 +9,17 @@ namespace Project2.Controllers
 {
     public class FormController : Controller
     {
-        
+
         [HttpGet]
         public IActionResult Form()
         {
-            return View("Form");
+            return View();
         }
+
         [HttpPost]
         public IActionResult Form(Schedules s)
-        {
-            return View("Form", s);
+        {   
+            return View(s);
         }
 
 
