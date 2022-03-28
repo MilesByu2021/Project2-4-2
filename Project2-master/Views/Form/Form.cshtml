@@ -1,10 +1,11 @@
 ﻿@{
 }
 @model Schedules
+
 <form method="post" asp-controller="Submit" asp-action="Submit">
     
-    <input asp-for="StartDate" type="hidden" value="@Model.StartDate" />
-    <input asp-for="StartTime" type="hidden" value="@Model.StartTime" />
+    <input asp-for="DateTimeId" type="hidden" value="@ViewBag.DateTime" />
+    
     <label asp-for="GroupName">Group Name: </label>
     <input asp-for="GroupName" type="text" required/>
     <br />

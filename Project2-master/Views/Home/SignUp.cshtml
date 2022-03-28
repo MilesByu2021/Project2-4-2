@@ -1,0 +1,19 @@
+﻿@{
+}
+@model Project2.Models.DateTime
+<div class="container">
+    <div class="h-100 row align-items-center">
+        <form class="" method="post" asp-controller="Form" asp-action="Form">
+            <label asp-for="DateTimeId">Select A Timeslot: </label>
+            <select asp-for="DateTimeId" class="btn btn-info dropdown-toggle">
+                @foreach (Project2.Models.DateTime dt in ViewBag.DateTime)
+                {
+                    <option value="@dt.DateTimeId">@dt.StartDate @dt.StartTime</option>
+                }
+            </select>
+            <input type="submit" class="btn btn-primary" />
+        </form>
+    </div>
+</div>
+
+

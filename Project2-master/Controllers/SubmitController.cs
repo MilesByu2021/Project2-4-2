@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Project2.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Project2.Controllers
 {
@@ -16,7 +17,7 @@ namespace Project2.Controllers
         }
         //private IFormRepository repo { get; set; }
 
-        private Basket basket { get; set; }
+        //private Basket basket { get; set; }
 
         //public SubmitController(IFormRepository temp, Basket b)
         //{
@@ -47,7 +48,9 @@ namespace Project2.Controllers
         [HttpGet]
         public IActionResult ScheduleList ()
         {
-            var applications = scheduleContext.Schedule.ToList();
+            var applications = scheduleContext.Schedule
+                .Include(x => x.DateTime)
+                .ToList();
             return View("~/Views/ScheduleTable/ScheduleTable.cshtml", applications);
         }
         [HttpGet]

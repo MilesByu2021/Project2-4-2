@@ -11,13 +11,13 @@ namespace Project2.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private ScheduleApplicationContext blahContext { get; set; }
+        public HomeController(ScheduleApplicationContext some)
         {
-            _logger = logger;
+            blahContext = some;
         }
-
+        
+        
         public IActionResult Index()
         {
             return View();
@@ -36,6 +36,13 @@ namespace Project2.Controllers
 
         public IActionResult SignUp()
         {
+            var schedules = blahContext.Schedule.ToList();
+            var datetime = blahContext.DateTime.ToList();
+            foreach (Schedules s in schedules)
+            {
+                datetime = datetime.Where(x => x.DateTimeId != s.DateTimeId).ToList();
+            }
+            ViewBag.DateTime = datetime;
             return View();
         }
 

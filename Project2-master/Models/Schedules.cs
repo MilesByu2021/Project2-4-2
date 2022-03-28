@@ -19,7 +19,8 @@ namespace Project2.Models
         public string GroupEmail { get; set; }
        
         public string? GroupPhone { get; set; }
-        public string StartDate { get; set; }
-        public string StartTime { get; set; }
+        // Foreign Key
+        public int DateTimeId { get; set; }
+        public DateTime DateTime { get; set; }
     }
 }
